@@ -1,4 +1,4 @@
-use warehouse "TRANSFORMING";
+
 
 
 with customers as (
