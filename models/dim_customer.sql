@@ -1,6 +1,8 @@
 {{
 
-    CONFIG (materialized= 'table')
+    CONFIG (
+        materialized = 'table'
+        )
 }}
 
 
