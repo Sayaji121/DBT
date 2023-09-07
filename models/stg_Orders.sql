@@ -8,5 +8,5 @@ orders as (
 
     from raw.jaffle_shop.orders
 
-),
+)
 SELECT * FROM ORDERS
