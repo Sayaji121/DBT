@@ -35,6 +35,6 @@ models:
   jaffle_shop:
     Marts:
       core:
-        + materialized: table
+        +materialized: table
     Staging:
-        + materialized: view
+        +materialized: view
