@@ -1,13 +1,13 @@
 {{
   config(
-    materialized='view'
+    materialized='tables'
   )
 }}
 
 with customers as 
 (
     select * from {{ ref ('stg_customers') }}
-)
+),
 
 order as 
 (
