@@ -14,8 +14,9 @@ orders_payments as
 
     select  orders.order_id,
             orders.customer_id,
-           payments.AMOUNT
-        from orders  inner join  payments using (id)
+            payments.AMOUNT
+        from orders  inner join  payments 
+        on orders.id = payments .id 
 )
 
 select * from orders_payments
