@@ -1,21 +1,17 @@
 {{
-
-    config (
-        materialized='table'
-        )
+  config(
+    materialized='view'
+  )
 }}
 
-with customers as (
-
-    select * from {{ ref ('stg_customers')}}
-
-    from raw.jaffle_shop.customers
+with customers as 
+(
+    select * from {{ ref ('stg_customers') }}
 )
 
-orders as (
-
-    select * from {{  ref ('stg_orders') }}
-
+order as 
+(
+select * from {{  ref ('stg_orders') }}
 ),
 
 customer_orders as (
@@ -32,7 +28,6 @@ customer_orders as (
     group by 1
 
 ),
-
 
 final as (
 
