@@ -12,7 +12,7 @@ with orders as
  orders_payment as
 (
     select ORDERID,
-            case (when status ='success' then payment end) as AMOUNT
+            sum (case when status ='success' then payment end) as AMOUNT
     from payments
     group by 1        
 ),
