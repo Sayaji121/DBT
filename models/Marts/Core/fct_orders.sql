@@ -22,12 +22,12 @@ orders_payments as
 final as 
 (
     select
-        orders.order_id,
+        orders.orderid,
         orders.customer_id,
         orders.order_date,
         coalesce(orders_payments.amount,0) as amount
         from orders 
-        left join orders_payments using (order_id)
+        left join orders_payments using (orderid)
 )
 
 select * from final
