@@ -1,15 +1,15 @@
-WITH orders as
+with orders as
 (
  select * from    {{ ref ( 'stg_orders')}}
 ),
 
-with payments as 
+ payments as 
 (
 
     select * from {{ ref ('stg_payment')}}
 ),
 
-with orders_payment as
+ orders_payment as
 (
     select ORDERID,
             case (when status ='success' then payment end) as AMOUNT
