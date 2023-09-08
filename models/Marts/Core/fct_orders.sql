@@ -14,7 +14,7 @@ orders_payments as
 
     select  
             order_id,
-            sum (case when status = success then amount end ) as amount,
+            sum (case when status = success then amount end ) as amount
         from  payments 
         group by 1
 ),
