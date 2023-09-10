@@ -1,4 +1,9 @@
-with payments as 
+with sources as
+(
+    select * from {{ source ('stripe','payment')}}
+),
+
+ staged as 
 (
     select ID ,
            ORDERID,
@@ -7,6 +12,6 @@ with payments as
            AMOUNT,
            CREATED,
            _BATCHED_AT 
-           from raw.stripe.payment
+           from sources
 )
-select * from payments
+select * from staged
