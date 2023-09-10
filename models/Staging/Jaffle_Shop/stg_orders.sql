@@ -1,4 +1,9 @@
-with orders as (
+with sources as 
+(
+     select * from {{ source ('jaffle_shop','orders')}}
+),
+
+ staged as (
 
     select
         id as orderid,
@@ -6,7 +11,7 @@ with orders as (
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from sources
 
 )
-SELECT * FROM orders
+SELECT * FROM staged
