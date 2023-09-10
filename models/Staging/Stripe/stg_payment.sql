@@ -1,6 +1,6 @@
 with sources as
 (
-    select * from {{ source ('stripe','payment')}}
+    select * from     source {{('stripe','payment') }}
 ),
 
  staged as 
@@ -9,7 +9,7 @@ with sources as
            ORDERID,
            PAYMENTMETHOD,
            status,
-           AMOUNT,
+           AMOUNT/100 as amount,
            CREATED,
            _BATCHED_AT 
            from sources
